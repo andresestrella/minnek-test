@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { fade } from 'svelte/transition';
-	import loadingImg from '../../static/loading.png';
+	import loadingImg from '../../src/static/loading.png';
+	import { capitalize } from '$lib/stringUtils';
 	export let breed: string;
 	export let subBreeds: [] = [];
 
@@ -40,7 +41,7 @@
 	<div class="text-container">
 		<a href="coming-soon.html">
 			<h2>
-				{breed.replace(/\b\w/g, (l) => l.toUpperCase())}
+				{capitalize(breed)}
 			</h2>
 		</a>
 	</div>
@@ -91,10 +92,5 @@
 		align-items: center;
 		width: 100%; /* Full width (cover the whole image) */
 		height: 100%; /* Full height (cover the whole image) */
-	}
-
-	.overlay p {
-		color: black; /* Text color */
-		font-size: 20px; /* Adjust as needed */
 	}
 </style>
