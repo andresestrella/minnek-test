@@ -5,7 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-      target: base
+      target: production
     environment:
       - DB_HOST=db
       - DB_PORT=5432
@@ -13,8 +13,8 @@ services:
       - DB_PASSWORD=1234
       - DB_NAME=dogs_db
       - PORT=3000
-      - DATABASE_URL='postgresql://postgres:1234@db:5432/mydb?schema=public'
-        # - DATABASE_URL=postgresql://postgres:1234@db:5432/mydb?schema=public
+      - DATABASE_URL=postgresql://postgres:1234@db:5432/dogs_db?schema=public
+        # - DATABASE_URL=postgresql://postgres:1234@db:5432/dogs_db?schema=public
     volumes:
       - ./src:/home/node/app/src
     container_name: dog-app
@@ -22,7 +22,7 @@ services:
       - '3000:3000'
     depends_on:
       - db
-    command: npm run dev #start
+    # command: npm run build #start
     restart: always
 
   #postgres database
@@ -31,18 +31,18 @@ services:
     restart: always #unless-stopped
     environment:
       # - POSTGRES_HOST: localhost
-      - POSTGRES_PORT=5432
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=1234
-      - POSTGRES_NAME=dogs_db
       - POSTGRES_DB=dogs_db
+      - POSTGRES_NAME=dogs_db
+      - POSTGRES_PORT=5432
     ports:
       - '5432:5432'
     expose:
       - '5432'
     volumes:
-      - pgdata:/var/lib/postgresql/data
-      - ./db_queries/create_db.sql:/docker-entrypoint-initdb.d/init.sql
+      - pgdata:/var/lib/postgresql/data:rw
+      - ./db_queries/init.sql:/docker-entrypoint-initdb.d/init.sql:rw
       # - ./db_queries/create_drop_db.sql:/docker-entrypoint-initdb.d/create_drop_db.sql
 
   adminer:
@@ -53,3 +53,5 @@ services:
 
 volumes:
   pgdata:
+
+

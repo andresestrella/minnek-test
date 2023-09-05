@@ -1,0 +1,13 @@
+version: '3.7'
+
+services:
+  dog-app:
+    build:
+      dockerfile: Dockerfile
+      target: production
+    # command: npm run build
+
+  db:
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+      - ./db_queries/init.sql:/docker-entrypoint-initdb.d/init.sql

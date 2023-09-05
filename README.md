@@ -67,11 +67,11 @@ estos endpoints realizan operaciones CRUD que persisten en la base de datos
 - [x] deployment: no desplegué a la nube pero con los archivos docker-compose.yml es tan sencillo como encender una maquina virtual, clonar el repositorio y correr Docker build/run
 
 # otros proyectos
-no tuve tiempo de completar task 3 pero les dejo como referencia otros proyectos en los que trabajé en servicios back-end
-https://github.com/andresestrella/api-territorio-rd/tree/master
-https://github.com/Po1arM/Web-Avanzada
-https://github.com/NDavidDuranM/proyectofinal
-Muestro mas de mis proyectos pasados en mi perfil de (Github)[https://github.com/andresestrella]
+no tuve tiempo de completar todos los requisitos del task3 pero les dejo como referencia otros proyectos en los que trabajé en servicios back-end
+- https://github.com/andresestrella/api-territorio-rd/tree/master
+- https://github.com/Po1arM/Web-Avanzada
+- https://github.com/NDavidDuranM/proyectofinal
+Muestro videos y mas de mis proyectos pasados en mi perfil de (Github)[https://github.com/andresestrella]
 
 
 # Notas

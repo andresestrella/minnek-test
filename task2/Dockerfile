@@ -1,4 +1,4 @@
-FROM node:20 as base
+FROM node:16-alpine as builder
 WORKDIR /app
 
 COPY package.json package-lock.json ./
@@ -14,9 +14,9 @@ RUN npx prisma generate
 COPY . ./
 RUN npm run build
 
-FROM base as production
-USER node:node
+FROM node:16-alpine as production
 
+USER node:node
 WORKDIR /app
 COPY --from=builder --chown=node:node /app/build ./build
 COPY --from=builder --chown=node:node /app/node_modules ./node_modules
