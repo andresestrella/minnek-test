@@ -13,7 +13,7 @@ services:
       - DB_PASSWORD=1234
       - DB_NAME=dogs_db
       - PORT=3000
-      - DATABASE_URL="postgresql://postgres:1234@db:5432/mydb?schema=public"
+      - DATABASE_URL='postgresql://postgres:1234@db:5432/mydb?schema=public'
         # - DATABASE_URL=postgresql://postgres:1234@db:5432/mydb?schema=public
     volumes:
       - ./src:/home/node/app/src
