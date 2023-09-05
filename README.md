@@ -64,7 +64,7 @@ estos endpoints realizan operaciones CRUD que persisten en la base de datos
 - [] carrusel de imagenes
 - [] form UI para insertar perros
 - [x] testing modules
-- [x] deployment: no desplegué a la nube pero con los archivos docker-compose.yml es tan sencillo como encender una maquina virtual, clonar el repositorio y correr Docker build/run
+- [x] deployment: no desplegué a la nube pero con los archivos docker-compose.yml es tan sencillo como encender una maquina virtual, clonar el repositorio y correr `docker-compose up`
 
 # otros proyectos
 no tuve tiempo de completar todos los requisitos del task3 pero les dejo como referencia otros proyectos en los que trabajé en servicios back-end
