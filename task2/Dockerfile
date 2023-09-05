@@ -1,7 +1,16 @@
 FROM node:16-alpine as builder
 WORKDIR /app
+
 COPY package.json package-lock.json ./
+
+# generated prisma files
+COPY prisma ./prisma/
+
+# COPY ENV variables
+COPY .env ./
+
 RUN npm install
+RUN npx prisma generate
 COPY . ./
 RUN npm run build
 
