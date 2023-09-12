@@ -19,6 +19,12 @@ alternativamente sin Docker, local:
 2. npx prisma generate
 3. tener una instancia de postgres corriendo en la maquina, crear una db llamada 'dogs_db', y correr el script de inicializacion ubicado en ./task2/db_queries/
 
+no desplegué la app a la nube pero el proceso seria el siguiente:
+1. ssh a la maquina virtual
+2. crear una session de tmux para que los procesos no se cierren cuando salga de la maquina
+3. clonar repo
+4. `docker-compose up`
+
 ## stack
 TypeScript, Svelte / SvelteKit, Prisma ORM, PostgresSQL, Docker, html/css.
 
@@ -38,16 +44,6 @@ tampoco hay validacion de IDs duplicados al momento de insertar entradas.
 ## testing
 - `npm run test:unit` para correr los tests unitarios
 - (TODO)`npm run test:integration` para correr tests E2E con playwright
-
-## despliegue
-- para correr localmente usar `npm run dev`
-- para simular un despliegue a produccion: contruir una imagen Docker a base del Dockerfile y luego correr la imagen `docker build -t dog-app .` -> `docker run -d -p 3000:3000 dog-app`
-
-no desplegué la app a la nube porque se me acabaron los creditos que tenia en AWS y lo iba a desplegar en netlify pero tengo que esperar que verifiquen mi identidad :):
-pero el proceso es el siguiente:
-1. ssh a la maquina virtual
-2. crear una session de tmux para que los procesos no se cierren cuando salga de la maquina
-3. `git clone <repo>` -> `cd task2` -> `docker build -t dog-app .` -> `docker run -d -p 3000:3000 dog-app`
 
 
 # task 3
