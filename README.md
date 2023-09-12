@@ -50,7 +50,8 @@ en puerto 8080 se expone un programa para visualizar la BD
 ## endpoints expuestos
 - /api/dog:  GET, POST
 - /api/dog/[id]: GET, PUT, DELETE
-estos endpoints realizan operaciones CRUD que persisten en la base de datos
+estos endpoints realizan operaciones CRUD que persisten en la base de datos.
+
 ejemplo: visite `localhost:3000/api/dog` para ver todos los perros en la DB (la DB inicializa con solo 1)
 haga un DELETE request ([postman]([url](https://www.postman.com/))) a 'localhost:3000/api/dog/1' para borrar perro de ID 1.
 si visita `localhost:3000/api/dog/1' deberia dar error o no retornar nada ya que el perro de ID 1 fue eliminado.
