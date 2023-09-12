@@ -41,16 +41,21 @@ TypeScript, Svelte / SvelteKit, Prisma ORM, PostgresSQL, Docker, html/css.
 edit y delete solo funciona sobre el primer elemento de la lista ya que no he logrado obtener el id de la celda seleccionada (usé un plugin de tablas).
 tampoco hay validacion de IDs duplicados al momento de insertar entradas.
 
+
+# task 3
+## DB
+user: postgres, password: 1234
+en puerto 8080 se expone un programa para visualizar la BD
+
+## endpoints expuestos
+- /api/dog:  GET, POST
+- /api/dog/[id]: GET, PUT, DELETE
+estos endpoints realizan operaciones CRUD que persisten en la base de datos
+
+
 ## testing
 - `npm run test:unit` para correr los tests unitarios
 - (TODO)`npm run test:integration` para correr tests E2E con playwright
-
-
-# task 3
-endpoints expuestos:
-/api/dog:  GET, POST
-/api/dog/[id]: GET, PUT, DELETE
-estos endpoints realizan operaciones CRUD que persisten en la base de datos
 
 ## requisitos
 - [x] Database Postgres
@@ -61,12 +66,12 @@ estos endpoints realizan operaciones CRUD que persisten en la base de datos
 - [] form UI para insertar perros
 - [x] testing modules
 - [x] deployment: no desplegué a la nube pero con los archivos docker-compose.yml es tan sencillo como encender una maquina virtual, clonar el repositorio y correr `docker-compose up`
-
+TLDR: implemente la logica del back-end, tests y deployment(con Docker) pero no las interfaces que consumen la data de la base de datos ni el sistema de login/auth. 
+  
 # otros proyectos
 no tuve tiempo de completar todos los requisitos del task3 pero les dejo como referencia otros proyectos en los que trabajé en servicios back-end
 - https://github.com/andresestrella/api-territorio-rd/tree/master
 - https://github.com/Po1arM/Web-Avanzada
-- https://github.com/NDavidDuranM/proyectofinal
 Muestro videos y mas de mis proyectos pasados en mi perfil de (Github)[https://github.com/andresestrella]
 
 
@@ -75,9 +80,3 @@ Muestro videos y mas de mis proyectos pasados en mi perfil de (Github)[https://g
 - en un proyecto real le dedicaria tiempo a comentar partes del codigo donde evalue necesario.
 - Declaré los endpoints del back dentro de un solo proyecto por conveniencia, tipicamente suelo separarlos en dos servicios para mas flexibilidad al momento de desplegar y escalar.
 
-# TODO
-- guardar subBreeds en un store y asi no tengo que propagarle ese prop completo a todos los componentes <DogCard>
-- agregar tests unitarios para comprobar que los componentes se renderizan correctamente
-- arreglar sort por sub-breeds
-- bug: aveces no cargan algunas imagenes random, podria ser problema de la API.
-- mover fetch calls dentro de onMount hooks o dentro de load() functions como me alerta Vite.
